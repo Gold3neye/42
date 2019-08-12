@@ -1,0 +1,7 @@
+Credentials cache: API:60621
+        Principal: mepedro-@LE-101.FR
+
+  Issued                Expires               Principal
+Jul 30 09:47:56 2019  Jul 30 19:47:56 2019  krbtgt/LE-101.FR@LE-101.FR
+Jul 30 09:47:58 2019  Jul 30 19:47:56 2019  ldap/ldap-master.le-101.fr@LE-101.FR
+Jul 30 09:47:58 2019  Jul 30 19:47:56 2019  HTTP/san-ssd.le-101.fr@LE-101.FR
