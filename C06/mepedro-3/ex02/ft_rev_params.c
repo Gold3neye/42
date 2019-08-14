@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_print_program_name.c                          .::    .:/ .      .::   */
+/*   ft_rev_params.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mepedro- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/11 19:10:06 by mepedro-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/13 01:40:01 by mepedro-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/08/12 04:59:56 by mepedro-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/12 21:27:12 by mepedro-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,12 @@ void	ft_putstr(char *str)
 
 int		main(int argc, char **argv)
 {
-	argc = 0;
-	ft_putstr(argv[0]);
-	write(1, "\n", 1);
+	argc = argc - 1;
+	while (argc >= 1)
+	{
+		ft_putstr(argv[argc]);
+		write(1, "\n", 1);
+		argc--;
+	}
 	return (0);
 }
