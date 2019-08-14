@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_iterative_power.c                             .::    .:/ .      .::   */
+/*   ft_is_prime.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mepedro- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/12 02:36:01 by mepedro-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/13 23:08:27 by mepedro-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/08/13 23:14:30 by mepedro-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/14 00:27:39 by mepedro-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
+int		ft_is_prime(int nb)
 {
-	if (nb == 0)
+	long int		i;
+
+	i = 2;
+	if (nb <= 1)
 		return (0);
-	else
-		power = nb * nb;
-	return (power);
+	if (nb == 2)
+		return (1);
+	while (i * i <= nb)
+	{
+		if (nb % i == 0 && i != nb)
+			return (0);
+		i++;
+	}
+	return (1);
 }
