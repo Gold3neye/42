@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_find_next_prime.c                             .::    .:/ .      .::   */
+/*   elbool.c                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mepedro- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/14 01:50:55 by mepedro-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/14 13:28:28 by mepedro-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/08/18 05:32:06 by mepedro-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/18 05:48:53 by mepedro-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
-{
-	long int		i;
+#include "ft_boolean.h"
 
-	i = 2;
-	if (nb <= 1)
-		return (0);
-	if (nb == 2)
-		return (1);
-	while (i * i <= nb)
-	{
-		if (nb % i == 0 && i != nb)
-			return (0);
-		i++;
-	}
-	return (1);
+void ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
 }
-
-int		ft_find_next_prime(int nb)
+t_bool ft_is_even(int nbr)
 {
-	if (nb <= 2)
-		return (2);
-	while (ft_is_prime(nb) == 0)
-		++nb;
-	return (nb);
+	return ((EVEN(nbr)) ? TRUE : FALSE);
+}
+int main(int argc, char **argv)
+{
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+		ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }

@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_find_next_prime.c                             .::    .:/ .      .::   */
+/*   ft_strdup.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mepedro- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/14 01:50:55 by mepedro-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/14 13:28:28 by mepedro-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/08/14 02:20:02 by mepedro-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/15 06:10:15 by mepedro-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
-{
-	long int		i;
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
-	i = 2;
-	if (nb <= 1)
-		return (0);
-	if (nb == 2)
-		return (1);
-	while (i * i <= nb)
-	{
-		if (nb % i == 0 && i != nb)
-			return (0);
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
 		i++;
-	}
-	return (1);
+	return (i);
 }
 
-int		ft_find_next_prime(int nb)
+char		*ft_strdup(char *src)
 {
-	if (nb <= 2)
-		return (2);
-	while (ft_is_prime(nb) == 0)
-		++nb;
-	return (nb);
+	char 	*dest;
+	int i;
+
+	i = 0;
+	if (!(dest = (malloc(sizeof(char) + 1))))
+		return (NULL);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+int		main(void)
+{
+	printf("%s", ft_strdup("qwertyrhr"));
 }

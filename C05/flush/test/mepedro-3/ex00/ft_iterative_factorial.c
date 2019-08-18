@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_find_next_prime.c                             .::    .:/ .      .::   */
+/*   ft_iterative_factoriel.c                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mepedro- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/14 01:50:55 by mepedro-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/08/14 13:28:28 by mepedro-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/08/12 01:33:52 by mepedro-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/14 06:26:17 by mepedro-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int		ft_iterative_factorial(int nb)
 {
-	long int		i;
+	int fact;
 
-	i = 2;
-	if (nb <= 1)
+	fact = 1;
+	if (nb == 0 || nb == 1)
+		return (fact);
+	if (nb < 2)
 		return (0);
-	if (nb == 2)
-		return (1);
-	while (i * i <= nb)
-	{
-		if (nb % i == 0 && i != nb)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int		ft_find_next_prime(int nb)
-{
-	if (nb <= 2)
-		return (2);
-	while (ft_is_prime(nb) == 0)
-		++nb;
-	return (nb);
+	while (nb >= 2)
+		fact *= nb--;
+	return (fact);
 }
